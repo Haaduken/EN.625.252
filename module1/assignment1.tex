@@ -39,61 +39,65 @@
         \end{bmatrix}
         $$
         \begin{solution}
-            Multiplying the bottom row by `-3(Row1)'
-            $$
-            \begin{bmatrix}
-                1 & 3 & 4 & 7\\
-                3 - 3(1) & 9 - 3(3) & 7 - 3(4) & 6 - 3(7)
-            \end{bmatrix}
-            $$
-            $$
-            \begin{bmatrix}
-                1 & 3 & 4 & 7\\
-                0 & 0 & -5 & -15
-            \end{bmatrix}
-            $$
-            Which can simply to
-            $$
-            \begin{bmatrix}
-                1 & 3 & 4 & 7\\
-                0 & 0 & 1 & 3
-            \end{bmatrix}
-            $$
-            This can be turned into Reduced Row Echelon Form by multiplying the top row by `-4(Row2)'
-            $$
-            \begin{bmatrix}
-                1 - 4(0) & 3 - 4(0) & 4 - 4(1) & 7 - 4(3)\\
-                0 & 0 & 1 & 3
-            \end{bmatrix}
-            $$
-            Which simplifies to
-            $$
-            \begin{bmatrix}
-                1 & 3 & 0 & -5\\
-                0 & 0 & 1 & 3
-            \end{bmatrix}
-            $$
-            $$
-            \begin{matrix}
-                x_1 + 3x_2 = -5\\
-                x_3 = 3
-            \end{matrix}
-            $$
-            $x_2$ is a free variable which results in the following:
-            $$
-            \begin{matrix}
-                x_1 = -5 -3t\\
-                x_2 = t\\
-                x_3 = 3
-            \end{matrix}
-            $$
-            To verify, I plugged the original values into Matlab\\
             \begin{center}
-                \includegraphics{matlab-verify}
+                
+                $R_2 \leftarrow R_2 - 3(R_1)$
+                $$
+                \begin{bmatrix}
+                    1 & 3 & 4 & 7\\
+                    3 - 3(1) & 9 - 3(3) & 7 - 3(4) & 6 - 3(7)
+                \end{bmatrix}
+                $$
+                $$
+                \begin{bmatrix}
+                    1 & 3 & 4 & 7\\
+                    0 & 0 & -5 & -15
+                \end{bmatrix}
+                $$
+                Which can simply to
+                $$
+                \begin{bmatrix}
+                    1 & 3 & 4 & 7\\
+                    0 & 0 & 1 & 3
+                \end{bmatrix}
+                $$
+                This can be turned into Reduced Row Echelon Form by $R_1 \leftarrow R_1 -4(R_2)$
+                $$
+                \begin{bmatrix}
+                    1 - 4(0) & 3 - 4(0) & 4 - 4(1) & 7 - 4(3)\\
+                    0 & 0 & 1 & 3
+                \end{bmatrix}
+                $$
+                Which simplifies to
+                $$
+                \begin{bmatrix}
+                    1 & 3 & 0 & -5\\
+                    0 & 0 & 1 & 3
+                \end{bmatrix}
+                $$
+                $$
+                \begin{matrix}
+                    x_1 + 3x_2 = -5\\
+                    x_3 = 3
+                \end{matrix}
+                $$
+                $x_2$ is a free variable which results in the following:
+                $$
+                \begin{matrix}
+                    x_1 = -5 -3t\\
+                    x_2 = t\\
+                    x_3 = 3
+                \end{matrix}
+                $$
+                To verify, I plugged the original values into Matlab\\
+                \begin{center}
+                    \includegraphics{matlab-verify}
+                \end{center}
+                which aligns with my solution
             \end{center}
-            which aligns with my solution
         \end{solution}
     % end question 1
+    \pagebreak
 
     \question What would you have to know about the pivot columns in an augmented
         matrix in order to know that the linear system is consistent and has a
@@ -101,7 +105,7 @@
         justify your reasoning.
     
         \begin{solution}
-            For a linear system to be consistent, the last column pf the augmented matrix must not be a pivot. In addition to that, if it is unique, that means every column (variable) has a single pivot. The following is an example of such.
+            For a linear system to be consistent, the last column of the augmented matrix must not be a pivot. In addition to that, if it is unique, that means every column (variable) has a single pivot. The following is an example of such.
 
             $$
             \begin{bmatrix}
@@ -121,6 +125,7 @@
             $$
         \end{solution}
     % end question 2
+    \pagebreak
 
     \question Consider the linear system\\
             $$
@@ -130,31 +135,34 @@
             \end{matrix}
             $$
             \begin{parts}
-            \part Find values of \emph{h} and \emph{k} such that the system has no solution
-            \part Find values of \emph{h} and \emph{k} such that the system has a unique solution.
-            \part Find values of \emph{h} and \emph{k} such that the system has infinitely many solutions.
-        \end{parts}
-        \begin{solution}
-            $$
-            \begin{bmatrix}
-                1 & h & 2\\
-                4 & 8 & k
-            \end{bmatrix}
-            $$
-            $R_2 \leftarrow R_2 - 4(R_1)$
-            $$
-            \begin{bmatrix}
-                1 & h & 2\\
-                4 - 4(1) & 8 - 4(h) & k - 4(2)
-            \end{bmatrix}
-            $$
-            $$
-            \begin{bmatrix}
-                1 & h & 2\\
-                0 & 8 - 4h & k - 8
-            \end{bmatrix}
-            $$
-            \begin{parts}
+                \part Find values of \emph{h} and \emph{k} such that the system has no solution
+                \part Find values of \emph{h} and \emph{k} such that the system has a unique solution.
+                \part Find values of \emph{h} and \emph{k} such that the system has infinitely many solutions.
+            \end{parts}
+            \begin{solution}
+                \begin{center}
+                    
+                    $$
+                    \begin{bmatrix}
+                        1 & h & 2\\
+                        4 & 8 & k
+                    \end{bmatrix}
+                    $$
+                    $R_2 \leftarrow R_2 - 4(R_1)$
+                    $$
+                    \begin{bmatrix}
+                        1 & h & 2\\
+                        4 - 4(1) & 8 - 4(h) & k - 4(2)
+                    \end{bmatrix}
+                    $$
+                    $$
+                    \begin{bmatrix}
+                        1 & h & 2\\
+                        0 & 8 - 4h & k - 8
+                    \end{bmatrix}
+                    $$
+                \end{center}
+                \begin{parts}
                 \part 
                     $(8-4h)x_2 = k - 8$\\
                     So $8 - 4h = 0$ and $k - 8 \neq 0$\\
@@ -179,10 +187,10 @@
                     \end{bmatrix}
                     $\\
                     Resulting in $x_1 + 2x_2 = 2 \rightarrow x_1 = 2 - 2x_2$ with infinite solutions for $h = 2$ and $k = 8$
-
-            \end{parts}
-        \end{solution}
-    % end question 3
-    
-\end{questions}
-\end{document}
+                    
+                \end{parts}
+            \end{solution}
+            % end question 3
+            
+        \end{questions}
+        \end{document}
