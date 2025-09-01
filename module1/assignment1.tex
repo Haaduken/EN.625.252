@@ -128,69 +128,69 @@
     \pagebreak
 
     \question Consider the linear system\\
-            $$
-            \begin{matrix}
-                x_1 + hx_2 = 2\\
-                4x_1 + 8x_2 = k
-            \end{matrix}
-            $$
+        $$
+        \begin{matrix}
+            x_1 + hx_2 = 2\\
+            4x_1 + 8x_2 = k
+        \end{matrix}
+        $$
+        \begin{parts}
+            \part Find values of \emph{h} and \emph{k} such that the system has no solution
+            \part Find values of \emph{h} and \emph{k} such that the system has a unique solution.
+            \part Find values of \emph{h} and \emph{k} such that the system has infinitely many solutions.
+        \end{parts}
+        \begin{solution}
+            \begin{center}
+                
+                $$
+                \begin{bmatrix}
+                    1 & h & 2\\
+                    4 & 8 & k
+                \end{bmatrix}
+                $$
+                $R_2 \leftarrow R_2 - 4(R_1)$
+                $$
+                \begin{bmatrix}
+                    1 & h & 2\\
+                    4 - 4(1) & 8 - 4(h) & k - 4(2)
+                \end{bmatrix}
+                $$
+                $$
+                \begin{bmatrix}
+                    1 & h & 2\\
+                    0 & 8 - 4h & k - 8
+                \end{bmatrix}
+                $$
+            \end{center}
             \begin{parts}
-                \part Find values of \emph{h} and \emph{k} such that the system has no solution
-                \part Find values of \emph{h} and \emph{k} such that the system has a unique solution.
-                \part Find values of \emph{h} and \emph{k} such that the system has infinitely many solutions.
+            \part 
+                $(8-4h)x_2 = k - 8$\\
+                So $8 - 4h = 0$ and $k - 8 \neq 0$\\
+                For no solution, $h = 2$ and $k = 8$
+            \part 
+                As long as the coefficient of $x_2$ is nonzero $k - 8$ can be any value, therefore:\\
+                $h \neq 2$ and $k$ can be any real number
+            \part
+                To have infinite solutions, it must be consistent and one free variable.\\
+                Using 
+                $
+                h = 2 \rightarrow 
+                \begin{bmatrix}
+                    1 & 2 & 2\\
+                    0 & 0 & k - 8     
+                \end{bmatrix}
+                $
+                to be consistent, $ k - 8$ must also equal 0, thus $ k = 8 \rightarrow
+                \begin{bmatrix}
+                    1 & 2 & 2\\
+                    0 & 0 & 0
+                \end{bmatrix}
+                $\\
+                Resulting in $x_1 + 2x_2 = 2 \rightarrow x_1 = 2 - 2x_2$ with infinite solutions for $h = 2$ and $k = 8$
+                
             \end{parts}
-            \begin{solution}
-                \begin{center}
-                    
-                    $$
-                    \begin{bmatrix}
-                        1 & h & 2\\
-                        4 & 8 & k
-                    \end{bmatrix}
-                    $$
-                    $R_2 \leftarrow R_2 - 4(R_1)$
-                    $$
-                    \begin{bmatrix}
-                        1 & h & 2\\
-                        4 - 4(1) & 8 - 4(h) & k - 4(2)
-                    \end{bmatrix}
-                    $$
-                    $$
-                    \begin{bmatrix}
-                        1 & h & 2\\
-                        0 & 8 - 4h & k - 8
-                    \end{bmatrix}
-                    $$
-                \end{center}
-                \begin{parts}
-                \part 
-                    $(8-4h)x_2 = k - 8$\\
-                    So $8 - 4h = 0$ and $k - 8 \neq 0$\\
-                    For no solution, $h = 2$ and $k = 8$
-                \part 
-                    As long as the coefficient of $x_2$ is nonzero $k - 8$ can be any value, therefore:\\
-                    $h \neq 2$ and $k$ can be any real number
-                \part
-                    To have infinite solutions, it must be consistent and one free variable.\\
-                    Using 
-                    $
-                    h = 2 \rightarrow 
-                    \begin{bmatrix}
-                        1 & 2 & 2\\
-                        0 & 0 & k - 8     
-                    \end{bmatrix}
-                    $
-                    to be consistent, $ k - 8$ must also equal 0, thus $ k = 8 \rightarrow
-                    \begin{bmatrix}
-                        1 & 2 & 2\\
-                        0 & 0 & 0
-                    \end{bmatrix}
-                    $\\
-                    Resulting in $x_1 + 2x_2 = 2 \rightarrow x_1 = 2 - 2x_2$ with infinite solutions for $h = 2$ and $k = 8$
-                    
-                \end{parts}
-            \end{solution}
-            % end question 3
+        \end{solution}
+    % end question 3
             
-        \end{questions}
-        \end{document}
+\end{questions}
+\end{document}
